@@ -5,9 +5,17 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  height: 100%;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+.inbl{
+  display: inline-block;
+}
+.hv:hover{
+  cursor: pointer;
+  box-shadow: 0 0 11px rgba(33,33,33,.2); 
 }
