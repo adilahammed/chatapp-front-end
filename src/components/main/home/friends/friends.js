@@ -2,19 +2,11 @@ import React,{useEffect,useState,useRef} from 'react'
 import Friendslist from './friendlist/friendslist'
 import Chat from './chat/chat'
 
-export default function Friends({token,tokenmanage,ffriends,socket,user}) {
+export default function Friends({token,tokenmanage,ffriends,socket,user,chatlist,setsend}) {
     const [chat, setchat] = useState("friends")
     const [chatprofile, setchatprofile] = useState("");
-    const [chatlist, setchatlist] = useState([])
+    // const [chatlist, setchatlist] = useState([])
     const [recieve, setrecieve] = useState("")
-    
-
-    useEffect(() => {
-        var c=[...chatlist]
-        c.push(recieve)
-        setchatlist(c)
-        console.log(chatlist)
-    }, [recieve])
     
     useEffect(() => {
         ffriends.map((a)=>{
@@ -24,24 +16,30 @@ export default function Friends({token,tokenmanage,ffriends,socket,user}) {
         })
     }, [ffriends])
 
-    useEffect(() => {
-        console.log("socketttt");
-        socket.on("recieve_message",(message)=>{
-           setrecieve(message)
-        })
-    }, [])
+    // useEffect(() => {
+    //     var c=[...chatlist]
+    //     c.push(recieve)
+    //     setchatlist(c)
+    //     console.log(chatlist)
+    // }, [recieve])
     
+
+    // useEffect(() => {
+    //     console.log("socketttt");
+    //     socket.on("recieve_message",(message)=>{
+    //        setrecieve(message)
+    //     })
+    // }, [])
+    
+
+        // const setsend=(a)=>{
+        //     var c=[...chatlist]
+        //     c.push(a)
+        //     setchatlist(c)
+        //     console.log(chatlist)
+        // }
     const changepage=(v)=>{
-
         setchat(v)
-        
-    }
-
-    const setsend=(a)=>{
-        var c=[...chatlist]
-        c.push(a)
-        setchatlist(c)
-        console.log(chatlist)
     }
   
 

@@ -18,6 +18,45 @@ export default function Home({token,tokenmanage}) {
     const [friends, setfriends] = useState([])
     const [user, setuser] = useState("")
 
+    const [chatlist, setchatlist] = useState([])
+    const [recieve, setrecieve] = useState("")
+
+    
+
+    useEffect(() => {
+        var c=[...chatlist]
+        c.push(recieve)
+        setchatlist(c)
+        console.log(chatlist)
+    }, [recieve])
+    
+
+    useEffect(() => {
+        console.log("socketttt");
+        socket.on("recieve_message",(message)=>{
+           setrecieve(message)
+        })
+    }, [])
+
+    const setsend=(a)=>{
+        var c=[...chatlist]
+        c.push(a)
+        setchatlist(c)
+        console.log(chatlist)
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     
     const getdet =()=>{
@@ -64,7 +103,7 @@ export default function Home({token,tokenmanage}) {
             return(
                 <div>
                    <Friends tokenmanage={tokenmanage}  token={token} ffriends={friends}
-                   socket={socket} user={user} />
+                   socket={socket} user={user} chatlist={chatlist} setsend={setsend} />
                 </div>
             )
         }
