@@ -7,14 +7,14 @@ export default function Reqlist({token,tokenmanage}) {
     const [reqlist, setreqlist] = useState([])
     useEffect(() => {
         axios({
-            url:"http://localhost:8800/api/no/users/reqlist",
+            url:"https://lighttext.herokuapp.com/api/no/users/reqlist",
             method:"get",
             headers:{"Authorization":`Bearer ${token}`}
         }).then((res)=>{
             if(res.status===200){
                 setreqlist(res.data.msg)
             }
-            console.log(res.data.msg);
+            //console.log(res.data.msg);
         })
     }, [])
     

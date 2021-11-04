@@ -24,19 +24,19 @@ const gettext=(e,a)=>{
 }
 
 const login=()=>{
-    console.log(username,email,password);
-    console.log("craete clicked");
-    axios.post('http://localhost:8800/api/auth/create/',{
+    //console.log(username,email,password);
+    //console.log("craete clicked");
+    axios.post('https://lighttext.herokuapp.com/api/auth/create/',{
         username,
         email,
         password
     }).then((res)=>{
-        console.log(res.data.status);
+        //console.log(res.data.status);
         
         alert(res.data.status)
         setsuccess(res.data.status)
     }).catch((err)=>{
-        console.log(err);
+        //console.log(err);
         throw(err)
         alert(err)
     })   

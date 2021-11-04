@@ -113,3 +113,21 @@
   margin-left: 20px;
   border-radius: 10px;
 }
+
+.options{
+  vertical-align:top;
+  float: right;
+}
+.optionask{
+  height: 40px;
+  width: 250px;
+  padding-left: 20px;
+  background-color: white;
+  position: fixed;
+  margin-left: -300px;
+  border-radius: 10px;
+}
+.yesbutton{
+  border: 0;
+  background-color: cadetblue;
+}

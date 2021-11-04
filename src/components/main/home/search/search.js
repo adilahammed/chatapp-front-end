@@ -18,14 +18,14 @@ export default function Search({searchval,token}) {
     useEffect(() => {
         let timeid=setTimeout(()=>{
             axios({
-                url:'http://localhost:8800/api/no/users/search',
+                url:'https://lighttext.herokuapp.com/api/no/users/search',
                 method:"get",
                 headers:{"Authorization":`Bearer ${token}`},
                 params:{searchval}
             }).then((res)=>{
                 if(res.status===200){
                     setsearchlist(res.data)
-                    console.log(searchlist);
+                    //console.log(searchlist);
                 }else if(res.status===401){
                     
                 }     

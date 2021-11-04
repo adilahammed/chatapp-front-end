@@ -20,12 +20,12 @@ export default function Friends({token,tokenmanage,ffriends,socket,user,chatlist
     //     var c=[...chatlist]
     //     c.push(recieve)
     //     setchatlist(c)
-    //     console.log(chatlist)
+    //     //console.log(chatlist)
     // }, [recieve])
     
 
     // useEffect(() => {
-    //     console.log("socketttt");
+    //     //console.log("socketttt");
     //     socket.on("recieve_message",(message)=>{
     //        setrecieve(message)
     //     })
@@ -36,7 +36,7 @@ export default function Friends({token,tokenmanage,ffriends,socket,user,chatlist
         //     var c=[...chatlist]
         //     c.push(a)
         //     setchatlist(c)
-        //     console.log(chatlist)
+        //     //console.log(chatlist)
         // }
     const changepage=(v)=>{
         setchat(v)
@@ -74,7 +74,7 @@ export default function Friends({token,tokenmanage,ffriends,socket,user,chatlist
             })
             
             return <Chat   chatprofile={chatprofile} changepage={changepage}
-             socket={socket} user={user} chatlist={filchat} setsend={setsend} />
+             socket={socket} user={user} chatlist={filchat} setsend={setsend} token={token} />
         }
     }
 

@@ -11,14 +11,14 @@
 }
 .head{
     margin: 0px;
-    background-color: rgb(68, 0, 255);
+    background-color: rgb(119, 117, 117);
     width: 100%;
    
 }
 
 .body{
     height: 100%;
-    background-color: rgb(30, 255, 0);
+    background-color: #45b4b1;
 }
 .homeverticle{
     background-color: rgb(237, 100, 152);

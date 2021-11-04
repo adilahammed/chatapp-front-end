@@ -10,7 +10,7 @@ import Settings from './settings/settings'
 import {IoIosPersonAdd} from 'react-icons/io'
 import Reqlist from './reqlist/reqlist'
 import { io } from "socket.io-client";
-let socket=io("http://localhost:8800")
+let socket=io("https://lighttext.herokuapp.com")
 
 export default function Home({token,tokenmanage}) {
     const [searchval, setsearchval] = useState("")
@@ -27,12 +27,12 @@ export default function Home({token,tokenmanage}) {
         var c=[...chatlist]
         c.push(recieve)
         setchatlist(c)
-        console.log(chatlist)
+        //console.log(chatlist)
     }, [recieve])
     
 
     useEffect(() => {
-        console.log("socketttt");
+        //console.log("socketttt");
         socket.on("recieve_message",(message)=>{
            setrecieve(message)
         })
@@ -42,7 +42,7 @@ export default function Home({token,tokenmanage}) {
         var c=[...chatlist]
         c.push(a)
         setchatlist(c)
-        console.log(chatlist)
+        //console.log(chatlist)
     }
 
 
@@ -60,15 +60,15 @@ export default function Home({token,tokenmanage}) {
 
     
     const getdet =()=>{
-        console.log("fetchhh");
+        //console.log("fetchhh");
 
         axios({
-            url:"http://localhost:8800/api/no/users/friendslist",
+            url:"https://lighttext.herokuapp.com/api/no/users/friendslist",
             method:"get",
             headers:{"Authorization":`Bearer ${token}`}
         }).then((res)=>{
             if(res.status===200){
-                console.log(res.data.msg.user);
+                //console.log(res.data.msg.user);
                 setfriends(res.data.msg.friends)
                 setuser(res.data.msg.user)
             }
@@ -77,7 +77,7 @@ export default function Home({token,tokenmanage}) {
     
     useEffect(() => {
         socket.on("update",()=>{
-            console.log("update");
+            //console.log("update");
             getdet()
         })
         socket.emit("setstatus",token)
@@ -117,7 +117,7 @@ export default function Home({token,tokenmanage}) {
         else if(homepage==="settings"){
             return(
                 <div>
-                   <Settings tokenmanage={tokenmanage}  token={token} />
+                   <Settings tokenmanage={tokenmanage}  token={token} user={user} />
                 </div>
             ) 
         }else if(homepage==="reqlist"){
@@ -129,7 +129,7 @@ export default function Home({token,tokenmanage}) {
         }
         
     }
-    console.log(searchval);
+    //console.log(searchval);
     return (
         <div className="home">
             <div className="homeverticle">

@@ -17,10 +17,10 @@ const [status, setstatus] = useState("")
         
     }
 const login=()=>{
-        // console.log(username,password);
+        // //console.log(username,password);
     let data={id:username,password}
   
-        axios.get('http://localhost:8800/api/auth/login',{params:{
+        axios.get('https://lighttext.herokuapp.com/api/auth/login',{params:{
             id:username,
             password:password
         }}).then((res)=>{
@@ -30,12 +30,12 @@ const login=()=>{
                 setstatus(res.data.msg)
             }else{
                 setstatus("email or password doesnt match")
-                console.log(res.data.status);
+                //console.log(res.data.status);
             }
-            // console.log(res.data.token);
+            // //console.log(res.data.token);
             
         }).catch((err)=>{
-            console.log(err);
+            //console.log(err);
             alert(err)
         })   
     }

@@ -5,7 +5,7 @@ export default function Friendslist({username,picture,status,lastchat}) {
 
     useEffect(() => {
         if(lastchat[lastchat.length-1]){
-            console.log(lastchat[lastchat.length-1].text);
+            //console.log(lastchat[lastchat.length-1].text);
             setlasttext(lastchat[lastchat.length-1].text)
         }
     }, [lastchat])
@@ -15,7 +15,7 @@ export default function Friendslist({username,picture,status,lastchat}) {
     return (
         <div>
             <div className="friendslistimage inbl">
-                <img className="friendslistimage" src={`http://localhost:8800/images/${picture}`} width="100px" height="100px"></img>
+                <img className="friendslistimage" src={`https://lighttext.herokuapp.com/images/${picture}`} width="100px" height="100px"></img>
             </div>
             <div className="inbl friendslisttext">
                 <h3>{username}</h3>

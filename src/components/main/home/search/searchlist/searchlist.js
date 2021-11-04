@@ -10,7 +10,7 @@ export default function Searchlist({username,email,picture,token}) {
         setsend(a)
         if(a==="yes"){
             axios({
-                url:"http://localhost:8800/api/no/users/sendreq",
+                url:"https://lighttext.herokuapp.com/api/no/users/sendreq",
                 method:"post",
                 headers:{"Authorization":`Bearer ${token}`},
                 data:{username}
@@ -50,7 +50,7 @@ export default function Searchlist({username,email,picture,token}) {
    return (
         <div className="searchlist">
             <div className="searchimg inbl">
-                 <img src="http://localhost:8800/images/user.png" width="100px" height="100px">
+                 <img src="https://lighttext.herokuapp.com/images/user.png" width="100px" height="100px">
                  </img>
             </div>
             <div className="searchtext inbl">

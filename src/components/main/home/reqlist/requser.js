@@ -6,7 +6,7 @@ export default function requser({username,email,picture,token}) {
 
     const accept=()=>{
         axios({
-            url:"http://localhost:8800/api/no/users/accept",
+            url:"https://lighttext.herokuapp.com/api/no/users/accept",
             method:"POST",
             headers:{"Authorization":`Bearer ${token}`},
             data:{username}
@@ -19,7 +19,7 @@ export default function requser({username,email,picture,token}) {
     return (
         <div>
             <div className="searchimg inbl">
-                 <img src={`http://localhost:8800/images/${picture}`} width="100px" height="100px">
+                 <img src={`https://lighttext.herokuapp.com/images/${picture}`} width="100px" height="100px">
                  </img>
             </div>
             <div className="searchtext inbl">
